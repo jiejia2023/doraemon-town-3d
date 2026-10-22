@@ -47,7 +47,7 @@ python3 -m http.server 8000
 
 - Three.js 0.160（CDN Import Map，无需构建）
 - 全部建筑/角色均为代码程序化建模（无外部模型文件）
-- GitHub Actions 自动部署 GitHub Pages
+- GitHub Pages 从 `main` 分支根目录部署
 
 ## 声明
 
