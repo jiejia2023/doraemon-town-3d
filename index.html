@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>哆啦A梦 · 大雄的小镇 | 月见台町 3D - Doraemon Town</title>
+<meta name="description" content="用 Three.js 还原藤子·F·不二雄《哆啦A梦》中大雄居住的月见台小镇：野比家、空地土管、月见台小学、后山、静香家、胖虎商店等经典场景。"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300a0e9'/><circle cx='50' cy='58' r='32' fill='white'/><circle cx='38' cy='42' r='6' fill='black'/><circle cx='62' cy='42' r='6' fill='black'/><circle cx='50' cy='52' r='7' fill='red'/></svg>"/>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="scene"></canvas>
+
+  <header class="topbar">
+    <div class="logo">🔔</div>
+    <div>
+      <h1>哆啦A梦 · 大雄的小镇</h1>
+      <p>月見台町 — 藤子・F・不二雄 原作还原 · 东京练马区原型</p>
+    </div>
+    <div class="top-actions">
+      <button id="btnDayNight">🌙 夜晚模式</button>
+      <button id="btnTour">▶ 自动巡游</button>
+      <button id="btnLabels" class="active">🏷️ 地标标签</button>
+    </div>
+  </header>
+
+  <aside class="panel">
+    <h2>📍 经典地标 · 点击前往</h2>
+    <div class="landmarks" id="landmarkList"></div>
+    <div class="tips">
+      <b>操作：</b>拖拽旋转 · 滚轮缩放 · 右键平移<br/>
+      点击场景中的建筑也会弹出介绍卡片。
+    </div>
+    <div class="fidelity">
+      <h3>还原说明</h3>
+      <ul>
+        <li><b>空地</b>：三根叠放的水泥土管 ドカン，原作聚会/棒球/胖虎演唱会之地</li>
+        <li><b>野比家</b>：二层一户建，大雄二楼房间+哆啦A梦的壁橱</li>
+        <li><b>月见台小学</b>：大雄、静香、胖虎、小夫的学校，操场+樱花</li>
+        <li><b>后山（裏山）</b>：学校后方，大雄秘密基地与冒险之地</li>
+        <li><b>布局</b>：参照动画常见地图——野比家、源家、刚田商店、骨川豪宅围绕空地分布，南侧临河堤</li>
+      </ul>
+    </div>
+  </aside>
+
+  <div id="infoCard" class="info-card hidden">
+    <button id="closeCard">×</button>
+    <div id="infoEmoji" class="info-emoji">🏠</div>
+    <h3 id="infoTitle">野比家</h3>
+    <p id="infoJa" class="ja"></p>
+    <p id="infoDesc"></p>
+  </div>
+
+  <div class="footer-bar">
+    <span>🎨 Three.js 低多边形手绘风 · 粉色任意门 / 竹蜻蜓 / 樱花飘落 / 会跑的电车</span>
+    <span class="credit">Fan-made tribute · 非官方 · 原作 © 藤子・F・不二雄 / 小学馆</span>
+  </div>
+
+  <div id="loading"><div class="bell">🔔</div><p>正在建造月见台小镇…<br/><small>从四次元口袋里掏出房子、学校和土管</small></p></div>
+</div>
+<script type="module" src="main.js"></script>
+</body>
+</html>
